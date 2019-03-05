@@ -7,9 +7,14 @@ import TextField from '@material-ui/core/TextField';
 
 export default function App(props) {
   const [name, setName] = useState('Sohad');
+  const [surname, setSurename] = useState('Dader');
 
   function handleNameChange(e) {
     setName(e.target.value);
+  }
+
+  function handleSurenameChange(e) {
+    setSurename(e.target.value);
   }
 
   return (
@@ -39,7 +44,6 @@ export default function App(props) {
         autoComplete="off"
       >
         <TextField
-          id="outlined-name"
           label="Name"
           style={{
             marginLeft: 30,
@@ -47,6 +51,18 @@ export default function App(props) {
           }}
           value={name}
           onChange={handleNameChange}
+          margin="normal"
+          variant="outlined"
+        />
+
+        <TextField
+          label="Sure Name"
+          style={{
+            marginLeft: 30,
+            marginRight: 30
+          }}
+          value={surname}
+          onChange={handleSurenameChange}
           margin="normal"
           variant="outlined"
         />
