@@ -9,9 +9,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Sohad'
+      name: 'Sohad',
+      surename: 'Dader'
     };
     this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleSurenameChange = this.handleSurenameChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -19,6 +21,13 @@ export default class App extends Component {
       name: e.target.value
     });
   }
+
+  handleSurenameChange(e) {
+    this.setState({
+      surename: e.target.value
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -47,14 +56,25 @@ export default class App extends Component {
           autoComplete="off"
         >
           <TextField
-            id="outlined-name"
             label="Name"
             style={{
               marginLeft: 30,
               marginRight: 30
             }}
-            value={name}
-            onChange={handleNameChange}
+            value={this.state.name}
+            onChange={this.handleNameChange}
+            margin="normal"
+            variant="outlined"
+          />
+
+          <TextField
+            label="Sure Name"
+            style={{
+              marginLeft: 30,
+              marginRight: 30
+            }}
+            value={this.state.surename}
+            onChange={this.handleSurenameChange}
             margin="normal"
             variant="outlined"
           />
